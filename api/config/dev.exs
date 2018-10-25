@@ -11,7 +11,15 @@ config :api, ApiWeb.Endpoint,
   debug_errors: true,
   code_reloader: true,
   check_origin: false,
-  watchers: []
+  watchers: [
+    node: [
+      "./node_modules/webpack/bin/webpack.js",
+      "--config", "./webpack.config.js",
+      "--watch", "--hot=false", "--stdin",
+      "--mode development",
+      cd: Path.expand("../../frontend", __DIR__)
+    ]
+  ]
 
 # ## SSL Support
 #

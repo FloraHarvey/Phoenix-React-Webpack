@@ -8,4 +8,8 @@ defmodule ApiWeb.Router do
   scope "/api", ApiWeb do
     pipe_through :api
   end
+
+  scope "/", ApiWeb do
+    get("/", IndexPageController, :index)
+  end
 end
