@@ -6,7 +6,8 @@
   "scripts": {
     "build": "webpack --mode production",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --open --mode development"
+    "start": "yarn run watch",
+    "watch": "webpack --mode development --watch-stdin"
   },
   "author": "",
   "license": "ISC",
