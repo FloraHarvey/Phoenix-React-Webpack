@@ -16,8 +16,15 @@ config :api, ApiWeb.Endpoint,
       "./node_modules/webpack/bin/webpack.js",
       "--config", "./webpack.config.js",
       "--watch", "--hot=false", "--stdin",
-      "--mode development",
+      "--mode=development",
       cd: Path.expand("../../frontend", __DIR__)
+    ]
+  ],
+  live_reload: [
+    patterns: [
+      ~r{priv/static/.*(js|css|png|jpeg|jpg|gif)$},
+      ~r{web/views/.*(ex)$},
+      ~r{web/templates/.*(eex)$}
     ]
   ]
 
